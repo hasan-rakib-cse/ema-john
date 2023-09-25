@@ -6,12 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 
-
-
-
-
-
-
 const Product = (props) => {
     const {img, name, seller, price, stock} = props.product;
   return (
@@ -25,6 +19,7 @@ const Product = (props) => {
             <p>${price}</p>
             <p><small>Only {stock} left in stock - order soon</small></p>
             <button className='main-button' onClick={() => props.addProduct(props.product)}>
+                {/* arrow function use korse jate automatically execute na hoye jay */}
                 <FontAwesomeIcon icon={faCartShopping} /> add to cart
             </button>
 

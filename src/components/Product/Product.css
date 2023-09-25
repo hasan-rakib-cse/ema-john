@@ -17,4 +17,9 @@
     background-color: darkgoldenrod;
     border: none;
     border-radius: 3px;
+    cursor: pointer;
+    transition: .3s;
+}
+.main-button:hover {
+    background-color: #dfa514;
 }
