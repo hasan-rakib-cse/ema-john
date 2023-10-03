@@ -1,10 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Cart = (props) => {
     const cart = props.cart
-
+    console.log(cart)
+    
     // one way to add total price
-    const total = cart.reduce((totalSum, element) => totalSum + element.price , 0)
+    const total = cart.reduce((totalSum, element) => totalSum + element.price*element.quantity, 0);
     // reduce korte chaile 2 ta jinis pass korte hoy
     // 1. ()    -> callback function    -> akhane 2 ta parameter thakbe
                                         // i) totalSum   -> jer moddhe initial value rekhe sum korte thakbe
@@ -46,6 +48,7 @@ const Cart = (props) => {
         <p><small>Shipping Cost: {shipping}</small></p>
         <p><small>Tax + Vat: {tax}</small></p>
         <p>Total Price: {grandTotal}</p>
+        <Link to={'/review'}><button className='main-button'>Review Order</button></Link>
     </div>
   )
 }

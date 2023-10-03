@@ -13,8 +13,8 @@ const ProductDetail = () => {
 
   return (
     <div>
-        <h1>{params.key} Product Detail Coming Soon!!</h1>
-        <Product product={allProduct} />
+        <h1>Your Product Details</h1>
+        <Product showAddToCart={false} product={allProduct} />
     </div>
   )
 }

@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom'
 
 const Product = (props) => {
     const {img, name, seller, price, stock, key} = props.product;
-
   return (
     <div className='product'>
         <div className='product-image'>
@@ -20,10 +19,12 @@ const Product = (props) => {
             <p><small>by: {seller}</small></p>
             <p>${price}</p>
             <p><small>Only {stock} left in stock - order soon</small></p>
-            <button className='main-button' onClick={() => props.addProduct(props.product)}>
-                {/* arrow function use korse jate automatically execute na hoye jay */}
-                <FontAwesomeIcon icon={faCartShopping} /> add to cart
-            </button>
+            {props.showAddToCart &&
+                <button className='main-button' onClick={() => props.addProduct(props.product)}>
+                    {/* arrow function use korse jate automatically execute na hoye jay */}
+                    <FontAwesomeIcon icon={faCartShopping} /> add to cart
+                </button>
+            }
 
         </div>
     </div>
