@@ -1,9 +1,12 @@
 .product {
     display: flex;
+    gap: 30px;
     border-bottom: 1px solid lightgray;
+    margin-top: 20px;
     margin-bottom: 5px;
     margin-right: 10px;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 .product-name {
     color: blue;
@@ -22,4 +25,8 @@
 }
 .main-button:hover {
     background-color: #dfa514;
+}
+.product-image {
+    padding: 10px;
+    box-shadow: 1px 1px 10px 1px #707070;
 }
