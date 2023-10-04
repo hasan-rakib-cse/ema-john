@@ -1,12 +1,11 @@
 .product {
     display: flex;
     gap: 30px;
-    border-bottom: 1px solid lightgray;
-    margin-top: 20px;
-    margin-bottom: 5px;
     margin-right: 10px;
-    padding-bottom: 20px;
     margin-bottom: 20px;
+    box-shadow: 1px 1px 8px 3px #ddd;
+    border-radius: 6px;
+    background: #fff;
 }
 .product-name {
     color: blue;
@@ -28,5 +27,6 @@
 }
 .product-image {
     padding: 10px;
-    box-shadow: 1px 1px 10px 1px #707070;
+    margin: 20px;
+    box-shadow: 0px 0px 5px 1px #707070;
 }
