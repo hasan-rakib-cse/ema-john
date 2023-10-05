@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import fakeData from '../../fakeData';
 import './Shop.css';
 import Product from '../Product/Product';
@@ -52,16 +55,20 @@ const Shop = () => {
     }
 
     return (
+
         <div className='twin-container'>
-            <div className="product-container">
-                {
-                    products.map(product => <Product addProduct={handleAddProduct} showAddToCart={true} key={product.key} product={product} />)
-                }
-            </div>
-            <div className="cart-container">
-                <Cart cart={cart} reviewBtn={<Link to={'/review'}><button className='main-button' style={{textDecoration: 'none'}}>Review Order</button></Link>} />
-            </div>
+            <Row>
+                <Col className="product-container" xs={{ span: 12, order: 2 }} lg={{span: 9, order: 1}}>
+                    {
+                        products.map(product => <Product addProduct={handleAddProduct} showAddToCart={true} key={product.key} product={product} />)
+                    }
+                </Col>
+                <Col className="cart-container " xs={{ span: 12, order: 1}} lg={{span: 3, order: 2}}>
+                    <Cart cart={cart} reviewBtn={<Link style={{textDecoration: 'none'}} to={'/review'}><button className='main-button'>Review Order</button></Link>} />
+                </Col>
+            </Row>
         </div>
+
     );
 };
 

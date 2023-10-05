@@ -5,6 +5,9 @@ import ReviewItem from '../ReviewItem/ReviewItem'
 import Cart from '../Cart/Cart'
 import happyImage from '../../images/giphy.gif'
 
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 const Review = () => {
   const [cart, setCart] = useState([])
   const [orderPlaced, setOrderPlaced] = useState(false)
@@ -42,13 +45,18 @@ const Review = () => {
   } 
   return (
     <div className='twin-container'>
-        <div className="product-container">
-          {cart.map(pd => <ReviewItem key={pd.key} product={pd} removeProduct={handleRemoveProduct} />)}
-          { thankYou }
-        </div>
-        <div className="cart-container">
-            <Cart cart={cart} />  
-            <button className='main-button' onClick={handlePlacedOrder}>Place Order</button>
+
+        <div className='twin-container'>
+            <Row>
+                <Col className="product-container" xs={{ span: 12, order: 2 }} lg={{span: 9, order: 1}}>
+                {cart.map(pd => <ReviewItem key={pd.key} product={pd} removeProduct={handleRemoveProduct} />)}
+                { thankYou }
+                </Col>
+                <Col className="cart-container " xs={{ span: 12, order: 1}} lg={{span: 3, order: 2}}>
+                  <Cart cart={cart} />  
+                  <button className='main-button' onClick={handlePlacedOrder}>Place Order</button>
+                </Col>
+            </Row>
         </div>
     </div>
   )

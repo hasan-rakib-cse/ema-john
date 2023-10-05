@@ -42,7 +42,7 @@ const Cart = (props) => {
 
   return (
     <div className='cart-column'>
-        <h3>Order Summary</h3>
+        <h4>Order Summary</h4>
         <p>Items Ordered: {cart.length}</p>
         <p>Product Price: {productPrice}</p>
         <p><small>Shipping Cost: {shipping}</small></p>

@@ -12,7 +12,7 @@ import ProductDetail from './components/ProductDetail/ProductDetail';
 
 function App() {
   return (
-    <div>
+    <div className='overflow-hidden'>
       <BrowserRouter>
       <Header />
         <Routes>
